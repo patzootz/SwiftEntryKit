@@ -33,6 +33,7 @@ public class EKSimpleMessageView: UIView {
         }
         thumbImageView = UIImageView()
         addSubview(thumbImageView)
+        thumbImageView.center = self.center
         thumbImageView.imageContent = content
     }
     
