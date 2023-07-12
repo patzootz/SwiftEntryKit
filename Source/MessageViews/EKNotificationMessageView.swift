@@ -44,10 +44,11 @@ final public class EKNotificationMessageView: EKSimpleMessageView {
         messageContentView.labelsOffset = insets.titleToDescription
         
         if let thumbImageView = thumbImageView {
-            thumbImageView.layoutToSuperview(.left, offset: insets.contentInsets.left)
-            thumbImageView.layoutToSuperview(.top, offset: insets.contentInsets.top)
+             thumbImageView.layoutToSuperview(.left, offset: insets.contentInsets.left)
+            thumbImageView.layoutToSuperview(.centerY, offset: 0) //Change here
             messageContentView.layout(.left, to: .right, of: thumbImageView, offset: 12)
-            messageContentView.layout(to: .top, of: thumbImageView, offset: 4)
+            messageContentView.layoutToSuperview(.top, offset: insets.contentInsets.top) //Here
+            //messageContentView.layout(to: .top, of: thumbImageView, offset: 4) //Here
         } else {
             messageContentView.layoutToSuperview(.left, offset: insets.contentInsets.left)
             messageContentView.layoutToSuperview(.top, offset: insets.contentInsets.top)
